@@ -6,9 +6,20 @@ import App from './App';
 
 Enzyme.configure({ adapter: new EnzymeAdapter()});
 
-test('renders learn react link', () => {
+test('renders without error', () => {
   const wrapper = shallow(<App />);
-  // console.log(wrapper.debug()); /* returns component as string /*
-  // expect(wrapper).toBeTruthy(); /* Passed */
-   expect(wrapper).toBeFalsy(); /* failed */
+  const appComponent = wrapper.find("[data-test='component-app']");
+  expect(appComponent.length).toBe(1); /** passed */
+});
+
+test('renders increment button', () => {
+});
+
+test('renders counter display', () => {
+});
+
+test('counter display starts with zero', () => {
+});
+
+test('counter display increments its value after clicking on button', () => {
 });
